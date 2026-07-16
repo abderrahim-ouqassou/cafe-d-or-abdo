@@ -24,9 +24,13 @@ nav{
 }
 
 .nav-logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
     font-size:28px;
     font-weight:bold;
 }
+
 
 nav ul{
     list-style:none;
@@ -46,11 +50,6 @@ nav ul li a:hover{
     color:#d4a373;
 }
 
-.nav-logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
 
 .nav-logo img{
     width:50px;
@@ -76,10 +75,14 @@ header{
 }
 
 header img{
-    width:700px;
-    height:400px;
+    width:90%;
+    max-width:900px;
+    height:450px;
     object-fit:cover;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
 }
+
 
 h1{
     font-size:40px;
