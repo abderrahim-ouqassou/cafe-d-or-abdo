@@ -65,3 +65,66 @@ hiddenElements.forEach((element) => {
     element.classList.add("hidden");
     observer.observe(element);
 });
+
+// ================= COUNTER =================
+
+const counters = document.querySelectorAll(".counter");
+
+const counterObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            const counter = entry.target;
+            const target = +counter.getAttribute("data-target");
+
+            let count = 0;
+
+            const speed = target / 100;
+
+            const updateCounter = () => {
+
+                if (count < target) {
+
+                    count += speed;
+
+                    counter.innerText = Math.ceil(count);
+
+                    requestAnimationFrame(updateCounter);
+
+                } else {
+
+                    counter.innerText = target.toLocaleString();
+
+                }
+
+            };
+
+            updateCounter();
+
+            counterObserver.unobserve(counter);
+
+        }
+
+    });
+
+});
+
+counters.forEach(counter => {
+    counterObserver.observe(counter);
+});
+
+// ================= REMOVE LOADER =================
+
+window.addEventListener("load", () => {
+
+    const loader = document.querySelector(".loader");
+
+    loader.style.opacity = "0";
+
+    setTimeout(() => {
+        loader.style.display = "none";
+    }, 500);
+
+});
