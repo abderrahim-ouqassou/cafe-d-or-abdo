@@ -556,3 +556,43 @@ footer p{
 .why-card h3{
     color:#d4a373;
 }
+
+/* ================= MOBILE NAVBAR ================= */
+
+.menu-toggle{
+    display:none;
+    font-size:32px;
+    color:white;
+    cursor:pointer;
+}
+
+@media (max-width:768px){
+
+    nav{
+        padding:15px 20px;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    nav ul{
+        display:none;
+        flex-direction:column;
+        width:100%;
+        background:#2b1d18;
+        position:absolute;
+        top:80px;
+        left:0;
+        padding:20px 0;
+        text-align:center;
+    }
+
+    nav ul.active{
+        display:flex;
+    }
+
+    nav ul li{
+        margin:15px 0;
+    }
+}
