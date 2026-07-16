@@ -518,3 +518,41 @@ footer p{
     transform:scale(1.08);
 }
 
+
+/* ================= WHY US ================= */
+
+.why-us{
+    background:white;
+    padding:70px 10%;
+    text-align:center;
+}
+
+.why-us h2{
+    color:#3e2723;
+    font-size:36px;
+    margin-bottom:40px;
+}
+
+.why-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.why-card{
+    width:280px;
+    background:#f8f3ed;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+    transition:.3s;
+}
+
+.why-card:hover{
+    transform:translateY(-10px);
+}
+
+.why-card h3{
+    color:#d4a373;
+}
