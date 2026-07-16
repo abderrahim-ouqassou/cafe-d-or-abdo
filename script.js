@@ -30,3 +30,38 @@ lightbox.addEventListener("click", (e) => {
     }
 });
 
+// ================= LOADER =================
+
+window.addEventListener("load", () => {
+
+    const loader = document.getElementById("loader");
+
+    setTimeout(() => {
+        loader.style.opacity = "0";
+
+        setTimeout(() => {
+            loader.style.display = "none";
+        }, 600);
+
+    }, 1500);
+
+});
+
+// ================= SCROLL ANIMATION =================
+
+const hiddenElements = document.querySelectorAll(
+    ".about, .menu, .gallery, .reviews, .contact, .infos"
+);
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+hiddenElements.forEach((element) => {
+    element.classList.add("hidden");
+    observer.observe(element);
+});
